@@ -5,7 +5,7 @@ const questions = [
         question: 'She, He, It, pertenecen a: ',
         options: ['First person', 'Third person',  'Second person'],
         correctAnswer: 'Third person',
-        feedback: 'Correct! Those pronouns are: Third person.'
+        feedback: 'Correct! The correct answer is: Third person.'
     },
 
    { question: 'Cual de los siguientes enunciados es el correcto? ',
@@ -54,7 +54,7 @@ const questions = [
 
 {
     question: 'Para que se utilizan los pronombres personales: ',
-    options: ['a. Para referirse a alguien o algo ', 'b. Describen animales personas o cosas', 'Son terminos especiales'],
+    options: ['a. Para referirse a alguien o algo', 'b. Describen animales personas o cosas', 'Son terminos especiales'],
     correctAnswer: 'a. Para referirse a alguien o algo',
     feedback: 'Correct! The correct answer is: a'
 },
