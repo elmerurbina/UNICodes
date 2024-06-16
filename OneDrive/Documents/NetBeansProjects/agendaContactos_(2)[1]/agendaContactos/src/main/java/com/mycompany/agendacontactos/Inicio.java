@@ -17,7 +17,7 @@ public class Inicio extends javax.swing.JFrame {
      String ubicacion = "";
     public Inicio() {
         initComponents();
-        
+        this.setLocationRelativeTo(null);
     
     }
 
@@ -214,7 +214,7 @@ public class Inicio extends javax.swing.JFrame {
     private void txtApellidosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtApellidosMouseExited
         // TODO add your handling code here:
         String nombre = txtApellidos.getText();
-        if (txtApellidos.getText().isBlank()){
+        if (nombre ==""){
         txtApellidos.setText("Apellidos");
         
         }

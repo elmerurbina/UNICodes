@@ -22,21 +22,25 @@ public class Dashboard extends javax.swing.JFrame {
     
     public Dashboard() {
         initComponents();
+        // Se utiliza para centrar la ventana
         this.setLocationRelativeTo(null);
+        // Instancias de los iconos
         crearIcono(icDashboard, "1.png");
         crearIcono(icElements, "2.png");
         crearIcono(icComponents, "3.png");
         crearIcono(icFormStuff, "4.png");
         crearIcono(icDateTable, "5.png");
-         crearIcono(icIcon, "6.png");
-          crearIcono(icSamplePage, "7.png");
-           crearIcono(icExtra, "8.png");
-            crearIcono(icMore, "9.png");
-             crearIcono(icLogOut, "10.png");
-             
-             crearLogo(icLogo, "logo.png");
+        crearIcono(icIcon, "6.png");
+        crearIcono(icSamplePage, "7.png");
+        crearIcono(icExtra, "8.png");
+        crearIcono(icMore, "9.png");
+        crearIcono(icLogOut, "10.png");
+         
+        // Instancia del logo
+        crearLogo(icLogo, "logo.png");
     }
     
+    // Metodo para agregar los iconos
     public void crearIcono(JLabel label, String icono){
     URL recursos = getClass().getResource("/icon/"+icono);
     ImageIcon imgIcono = new ImageIcon(Toolkit.getDefaultToolkit().getImage(recursos).getScaledInstance(20, 20,Image.SCALE_SMOOTH ));
@@ -45,6 +49,7 @@ public class Dashboard extends javax.swing.JFrame {
     label.setIcon(imgIcono);
     }
     
+    // Metodo para agregar el logo
     public void crearLogo(JLabel label, String logo){
     URL logotipo = getClass().getResource("/icon/"+logo);
     ImageIcon imgIcono = new ImageIcon(Toolkit.getDefaultToolkit().getImage(logotipo).getScaledInstance(30, 30,Image.SCALE_SMOOTH ));
@@ -97,9 +102,9 @@ public class Dashboard extends javax.swing.JFrame {
         Sider = new javax.swing.JPanel();
         icLogo = new javax.swing.JLabel();
         icDashboard = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        dashboard = new javax.swing.JLabel();
         icElements = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        elements = new javax.swing.JLabel();
         icComponents = new javax.swing.JLabel();
         Components = new javax.swing.JLabel();
         icFormStuff = new javax.swing.JLabel();
@@ -130,23 +135,23 @@ public class Dashboard extends javax.swing.JFrame {
 
         icDashboard.setText("Icono");
 
-        jLabel3.setForeground(new java.awt.Color(204, 204, 255));
-        jLabel3.setText("Dashboard");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        dashboard.setForeground(new java.awt.Color(204, 204, 255));
+        dashboard.setText("Dashboard");
+        dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                dashboardMouseClicked(evt);
             }
         });
 
         icElements.setText("Icono");
 
-        jLabel5.setForeground(new java.awt.Color(204, 204, 255));
-        jLabel5.setText("Ui Elementos");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        elements.setForeground(new java.awt.Color(204, 204, 255));
+        elements.setText("Ui Elementos");
+        elements.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        elements.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                elementsMouseClicked(evt);
             }
         });
 
@@ -192,6 +197,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 255));
         jLabel13.setText("My Data");
 
@@ -248,46 +254,54 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(SiderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(icLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(icFormStuff, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SiderLayout.createSequentialGroup()
-                        .addComponent(icComponents, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(SiderLayout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Icons, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dateTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(samplePage, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                    .addComponent(extra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(icFormStuff, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(formsStuff, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(SiderLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
+                                .addComponent(icComponents, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Components, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
+                                .addComponent(icDateTable, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(dateTable, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
+                                .addComponent(icIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Icons, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
+                                .addComponent(icSamplePage, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(samplePage, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
+                                .addComponent(icExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(extra, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
+                                .addComponent(icMore, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(more, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
+                                .addComponent(icLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SiderLayout.createSequentialGroup()
                                 .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(formsStuff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Components, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addComponent(icDateTable, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(icIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(icSamplePage, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(icExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(icElements, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(icDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(elements, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(SiderLayout.createSequentialGroup()
-                        .addComponent(icMore, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(more, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(icLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(SiderLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SiderLayout.createSequentialGroup()
-                        .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(icElements, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(icDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         SiderLayout.setVerticalGroup(
             SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,13 +309,13 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SiderLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(icDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(icDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(icElements, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(elements, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(icComponents, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,14 +344,14 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(icExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(extra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(icMore, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(more, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(more, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(SiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(icLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         Content.setBackground(new java.awt.Color(204, 204, 255));
@@ -346,7 +360,7 @@ public class Dashboard extends javax.swing.JFrame {
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,40 +390,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        
-         JInternalFrame ventana = new JInternalFrame("Dashboard", true, true, true, true);
-        ventana.setSize(300, 300);
-        ventana.setVisible(true);
-        
-        Content.add(ventana);
-        
-        try {
-            ventana.setSelected(true);
-            ventana.setMaximum(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-         JInternalFrame ventana = new JInternalFrame("Elements", true, true, true, true);
-        ventana.setSize(300, 300);
-        ventana.setVisible(true);
-        
-        Content.add(ventana);
-        
-        try {
-            ventana.setSelected(true);
-            ventana.setMaximum(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jLabel5MouseClicked
-
+     // Ventana de los Componentes
     private void ComponentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComponentsMouseClicked
         // TODO add your handling code here:
          JInternalFrame ventana = new JInternalFrame("Components", true, true, true, true);
@@ -426,6 +407,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ComponentsMouseClicked
 
+    // Ventana de las formas
     private void formsStuffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formsStuffMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("forms Stuff", true, true, true, true);
@@ -442,6 +424,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formsStuffMouseClicked
 
+    // Ventana de tabla de edades o Date Table
     private void dateTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateTableMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("Date Table", true, true, true, true);
@@ -458,6 +441,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_dateTableMouseClicked
 
+    // Ventana de Iconos
     private void IconsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconsMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("Icons", true, true, true, true);
@@ -474,6 +458,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_IconsMouseClicked
 
+    // Ventana de pagina de ejemplo
     private void samplePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_samplePageMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("Sample Page", true, true, true, true);
@@ -490,6 +475,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_samplePageMouseClicked
 
+    // Ventana de Extra
     private void extraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("Extra", true, true, true, true);
@@ -506,6 +492,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_extraMouseClicked
 
+    // Ventana de mas
     private void moreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("More", true, true, true, true);
@@ -522,6 +509,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_moreMouseClicked
 
+    // Ventana para cerrar sesion
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         // TODO add your handling code here:
         JInternalFrame ventana = new JInternalFrame("Log Out", true, true, true, true);
@@ -538,6 +526,42 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_logoutMouseClicked
 
+    // Ventana del elemento
+    private void elementsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elementsMouseClicked
+        // TODO add your handling code here:
+        JInternalFrame ventana = new JInternalFrame("Elements", true, true, true, true);
+        ventana.setSize(300, 300);
+        ventana.setVisible(true);
+        
+        Content.add(ventana);
+        
+        try {
+            ventana.setSelected(true);
+            ventana.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_elementsMouseClicked
+
+    // Ventana del Dashboard
+    private void dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardMouseClicked
+        // TODO add your handling code here:
+        
+         JInternalFrame ventana = new JInternalFrame("Dashboard", true, true, true, true);
+        ventana.setSize(300, 300);
+        ventana.setVisible(true);
+        
+        Content.add(ventana);
+        
+        try {
+            ventana.setSelected(true);
+            ventana.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_dashboardMouseClicked
+
+    
     /**
      * @param args the command line arguments
      */
@@ -579,7 +603,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel Content;
     private javax.swing.JLabel Icons;
     private javax.swing.JPanel Sider;
+    private javax.swing.JLabel dashboard;
     private javax.swing.JLabel dateTable;
+    private javax.swing.JLabel elements;
     private javax.swing.JLabel extra;
     private javax.swing.JLabel formsStuff;
     private javax.swing.JLabel icComponents;
@@ -594,8 +620,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel icMore;
     private javax.swing.JLabel icSamplePage;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel logout;
     private javax.swing.JLabel more;
     private javax.swing.JLabel samplePage;
